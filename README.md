@@ -90,11 +90,17 @@ Settings -> Code security and analysis -> Secret scanning [disable]
 minder profile status list --detailed  --name devsecops-profile
 ```
 
-![result_bad](img/result_bad.png)
+![result_bad](img/result_fail.png)
 
 # Turn on automatic remediation
 
-Here we will turn on automatic remediation
+Let's flip the remediation setting in our profile
+
+```bash
+sed -i '' 's/remediate: "off"/remediate: "on"/' devsecops.yaml
+```
+
+![git diff](img/diff.png)
 
 ```bash
 minder profile apply -f devsecops.yaml
@@ -106,7 +112,46 @@ minder profile apply -f devsecops.yaml
 minder profile status list --detailed  --name devsecops-profile
 ```
 
+![result_good_remediate](img/result_good_remediate.png)
 
+All good again!
 
+Two more things though, Dependabot and pinned tags is failed
 
+Let's head over to the repo as we need to merge some PRs
 
+![alt text](img/repo.png)
+
+First there is a PR to flip all of the pinned tags to a digest (fixed version)
+
+![alt text](img/pintags.png)
+
+Secondly, there is a PR to update the dependabot config
+
+![alt text](img/dependabot.png)
+
+# Wrap up
+
+That's it! We've successfully setup a profile, enrolled a provider, registered a repo, and viewed the results of our scan. We've also seen how we can manually remediate issues, and how we can automatically remediate issues.
+
+Last of all let's check the status of our profile again
+
+```bash
+minder profile status list --detailed  --name devsecops-profile
+```
+
+![alt text](img/finish.png)
+
+# What's next?
+
+Minder is currently in alpha, and we're looking for feedback from the community. If you're interested in trying out Minder, please reach out to us on Discord, or check out our documentation.
+
+We have a promise that Minder will always be free for open source projects.
+
+If you're interested in using Minder within your organisation, please reach out to me on Discord, or via our website.
+
+- [Minder Cloud](https://cloud.stacklok.com/)
+- [Stacklok Website](https://stacklok.com/)
+- [Minder Documentation](https://minder-docs.stacklok.dev/)
+- [Minder Code Repository](https://github.com/stacklok/minder)
+- [Discord Community](https://discord.gg/RkzVuTp3WK)

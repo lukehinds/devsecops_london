@@ -7,7 +7,7 @@ display_name: Example DevSecOps London Profile
 context:
   provider: github
 alert: "off"
-remediate: "off"
+remediate: "on"
 repository:
   - type: secret_scanning
     def:
@@ -17,9 +17,9 @@ repository:
       enabled: true
   - type: dependabot_configured
     def: 
-      package_ecosystem: gomod
+      package_ecosystem: python
       schedule_interval: weekly
-      apply_if_file: go.mod
+      apply_if_file: requirements.txt
   - type: actions_check_pinned_tags
     name: "GitHub Actions workflows reference pinned tags"
     def:
