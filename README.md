@@ -2,7 +2,7 @@
 
 _The following guide was put together for the London DevSecOps Gathering, Sep, 2024._
 
-This session will walk you through setting up a [minder](https://github.com/stacklok/minder) registration of an account, set up of a security profile, enrolling a provider, registering a repo, and viewing the results of a scan.
+This session will walk you through the set up of a [minder](https://github.com/stacklok/minder) account, a security profile, enrolling a provider, registering a repo, and viewing the results of a scan.
 
 We'll also see how we can we can automatically remediate issues.
 
