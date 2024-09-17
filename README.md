@@ -1,6 +1,6 @@
 # Minder Playalong Session - Let's secure some all the things! 🎉
 
-The following guide was put together for the London DevSecOps Gathering, Sep, 2024.
+_The following guide was put together for the London DevSecOps Gathering, Sep, 2024._
 
 This session will walk you through setting up a [minder](https://github.com/stacklok/minder) profile, enrolling a provider, registering a repo, and viewing the results of a scan. 
 
