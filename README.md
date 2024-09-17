@@ -143,7 +143,9 @@ Secondly, there is a PR to update the dependabot config
 
 ![digest](/img/dependabot.png)
 
-Last of all let's check the status of our profile again 🔍
+Get those two PRs merged.
+
+Once merged, let's check the status of our profile again 🔍
 
 ```bash
 minder profile status list --detailed  --name devsecops-profile
