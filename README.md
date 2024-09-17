@@ -1,4 +1,4 @@
-# Minder Playalong Session - Let's secure some all the things! 🎉
+# Minder Playalong Session - Let's secure some things! 🎉
 
 _The following guide was put together for the London DevSecOps Gathering, Sep, 2024._
 
