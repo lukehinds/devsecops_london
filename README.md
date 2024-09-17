@@ -84,6 +84,12 @@ minder profile status list --detailed  --name devsecops-profile
 ```
 🙌 All good!
 
+![results-good](img/result_good.png)
+
+> [!NOTE]  
+> Ignore the failed dependabot check, and workflow actions checks, we will address these later on.
+
+
 #### Manual Remediaton 🤔
 
 Let's now flip the secret scanning setting
@@ -95,7 +101,10 @@ Settings -> Code security and analysis -> Secret scanning [disable]
 ```bash
 minder profile status list --detailed  --name devsecops-profile
 ```
+
 😱 Oops, not so good...
+
+![results-bad](img/result_fail.png)
 
 #### Turn on automatic remediation 🤖
 
@@ -105,6 +114,8 @@ Let's flip the remediation setting in our profile
 sed -i '' 's/remediate: "off"/remediate: "on"/' devsecops.yaml
 ```
 
+![git-diff](img/diff.png)
+
 ### View the results of our scan one more time 🔍
 
 ```bash 
@@ -112,9 +123,23 @@ minder profile status list --detailed  --name devsecops-profile
 ```
 🙌 All good again!
 
-### Wrap up 🎉
+![results-good-remediate](img/result_good_remediate.png)
 
-That's it! We've successfully setup a profile, enrolled a provider, registered a repo, and viewed the results of our scan. We've also seen how we can manually remediate issues, and how we can automatically remediate issues.
+All good again!
+
+Two more things though!, Dependabot and pinned tags is failed
+
+Let's head over to the repo as we need to merge some PRs
+
+![repo](/img/repo.png)
+
+First there is a PR to flip all of the pinned tags to a digest (fixed version)
+
+![digest](/img/pintags.png)
+
+Secondly, there is a PR to update the dependabot config
+
+![digest](/img/dependabot.png)
 
 Last of all let's check the status of our profile again 🔍
 
@@ -122,15 +147,25 @@ Last of all let's check the status of our profile again 🔍
 minder profile status list --detailed  --name devsecops-profile
 ```
 
-🙌 All good!
+🙌 High five!!
 
-### What's next? 🤔
+![finish](/img/finish.png)
 
-Minder is currently in alpha, and we're looking for feedback from the community. If you're interested in trying out Minder, please reach out to us on Discord, or check out our documentation.
+### Wrap up 🎉
 
-We have a promise that Minder will always be free for open source projects.
+That's it! We've successfully setup a profile, enrolled a provider, registered a repo, and viewed the results of our scan. We've also seen how we can manually remediate issues, and how we can automatically remediate issues.
 
-If you're interested in using Minder within your organisation, please reach out to me on Discord, or via our website.
+## What's next? 🤔
+
+Minder is soon to come out of alpha, and we're looking for feedback from the community. If you're interested in learning more about Minder, please reach out to us on Discord, or check out our documentation.
+
+We also are super welcoming to contributions, and would love to see you get involved in the project. We have a number of open issues, and are always looking for new ideas.
+
+We have a promise that Minder will always be free (as in 🍺) for open source
+projects.
+
+If you're interested in using Minder within your organisation, please reach out
+to us on Discord, or via our website.
 
 - [Minder Cloud](https://cloud.stacklok.com/)
 - [Stacklok Website](https://stacklok.com/)
