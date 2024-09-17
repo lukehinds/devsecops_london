@@ -1,8 +1,10 @@
-# DevSecOps London Playalong Session 🎉
+# DevSecOps London Minder Playalong Session 🎉
 
-This session will walk you through setting up a minder profile, enrolling a provider, registering a repo, and viewing the results of a scan. We'll also see how we can manually remediate, and how we can automatically remediate issues.
+This session will walk you through setting up a [minder](https://github.com/stacklok/minder) profile, enrolling a provider, registering a repo, and viewing the results of a scan. 
 
-The results will be the following:
+We'll also see how we can we can automatically remediate issues.
+
+This will result in our repository being secured as follows:
 
 - Dependabot is enabled
 - GitHub Actions and Dockerfiles secure using digests over tags
