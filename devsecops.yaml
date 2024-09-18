@@ -7,7 +7,7 @@ display_name: Example DevSecOps London Profile
 context:
   provider: github
 alert: "off"
-remediate: "on"
+remediate: "off"
 repository:
   - type: secret_scanning
     def:

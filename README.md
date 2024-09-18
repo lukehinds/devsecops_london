@@ -19,12 +19,12 @@ These are just a few examples of the rules that can be applied to a profile. Min
 #### Clone this repository 💻
 
 ```bash
-git clone git@github.com:lukehinds/devsecops_london.git
+git clone https://github.com/lukehinds/devsecops_london.git && cd devsecops_london
 ```
 
-#### Fork a test repository 🤔
+#### Create a new repo using a template 🤔
 
-Fork a demo repo here: [demo-repo-python](https://github.com/stacklok/demo-repo-python/fork)
+For simplicity we have template of a demo project: [demo-repo-python](https://github.com/new?template_name=demo-repo-python&template_owner=stacklok)
 
 #### Install the Minder CLI 🔧
 
@@ -47,6 +47,8 @@ make build-minder-cli
 
 Path is : `bin/minder`
 
+Alternatively, you can download pre-built static binaries from the [releases page](https://github.com/stacklok/minder/releases).
+
 ### Login and create an account 🔑
 
 ```bash
@@ -56,7 +58,7 @@ minder auth login
 ### Create rules 📝
 
 ```bash
-minder ruletype create -f rules/
+minder ruletype apply -f rules/
 ```
 
 ### Create a profile 🔄
@@ -117,6 +119,12 @@ sed -i '' 's/remediate: "off"/remediate: "on"/' devsecops.yaml
 ```
 
 ![git-diff](img/diff.png)
+
+### Apply the updated profile 🔄
+
+```bash
+minder profile apply -f devsecops.yaml
+```
 
 ### View the results of our scan one more time 🔍
 
